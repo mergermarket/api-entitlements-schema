@@ -1,4 +1,4 @@
 {
   "trial": false,
-  "optional-datasets": ["contact-details"]
+  "optional-data": ["contact-details"]
 }
