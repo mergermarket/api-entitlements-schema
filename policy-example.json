@@ -15,8 +15,7 @@
             "field2": [ "baz" ]
           },
           "validity": {
-            "from": "2020-12-01",
-            "to": "2020-12-02"
+            "from": "2020-07-10T00:00:07.134Z" // we do not have the first request for limit as this restriction is unlimited
           }
         },
         {
@@ -25,8 +24,9 @@
             "field3": [ "quux" ]
           },
           "validity": {
-            "from": "2020-12-01",
-            "days-after-first-use": 30
+            "from": "2020-08-15T00:00:07.134Z",
+            "first-request": "2020-08-17T09:30:07.134Z", //this will be fed from logs, eventhough the start if 15 aug but will acuatlly expire in 2020-09-17T09:30:07.134Z
+            "limit-in-days": 30
           }
         }
       ]
