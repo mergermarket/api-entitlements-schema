@@ -1,0 +1,38 @@
+{
+  "api": {
+    "api1": {
+      "quota": {
+        "soft-limit": 10000,
+        "hard-limit": 20000,
+        "period": "MONTH"
+      },
+      "plan": "10-requests-per-second-plan",
+      "trial": true,
+      "statements": [
+        {
+          "restrictions": {
+            "field1": [ "foo", "bar" ],
+            "field2": [ "baz" ]
+          },
+          "validity": {
+            "from": "2020-12-01",
+            "to": "2020-12-02"
+          }
+        },
+        {
+          "restrictions": {
+            "field2": [ "baz" ],
+            "field3": [ "quux" ]
+          },
+          "validity": {
+            "from": "2020-12-01",
+            "days-after-first-use": 30
+          }
+        }
+      ]
+    },
+    "api2": {
+      "plan": "1000-requests-per-second-plan"
+    }
+  }
+}
