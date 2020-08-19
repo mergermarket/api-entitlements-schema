@@ -1,3 +1,4 @@
 {
-  "trial": false
+  "trial": false,
+  "optional-datasets": ["contact-details"]
 }
