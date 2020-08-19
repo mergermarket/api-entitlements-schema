@@ -31,7 +31,8 @@
       ]
     },
     "api2": {
-      "plan": "1000-requests-per-second-plan"
+      "plan": "1000-requests-per-second-plan",
+      "optional-datasets": ["contact-details"]
     }
   }
 }
