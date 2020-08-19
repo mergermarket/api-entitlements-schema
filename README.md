@@ -96,6 +96,8 @@ An API may restrict access to certain data by default in responses - e.g. it may
 }
 ```
 
+The identifiers are defined and interpretted by the APIs.
+
 ### Statements
 
 Statements define what datasets can be returned.
