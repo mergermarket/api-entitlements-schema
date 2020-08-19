@@ -1,5 +1,5 @@
 {
-  "api": {
+  "apis": {
     "api1": {
       "quota": {
         "soft-limit": 10000,
