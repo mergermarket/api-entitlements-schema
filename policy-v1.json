@@ -1,0 +1,98 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Policy",
+  "description": "A policy describing access rights to datasets within one or more APIs.",
+  "type": "object",
+  "properties": {
+    "version": {
+      "type": "integer",
+      "enum": [ 1 ]
+    },
+    "apis": {
+      "type": "object",
+      "description": "Access to a set of APIs keyed by identifier.",
+      "additionalProperties": {
+        "type": "object",
+        "required": [ "plan" ],
+        "properties": {
+          "plan": {
+            "description": "The name of the usage plan applied when accessing the API.",
+            "type": "string"
+          },
+          "quota": {
+            "description": "Limits for how many requests can be made to the API in a given period.",
+            "type": "object",
+            "required": [ "period" ],
+            "oneOf": [
+              { "required": [ "soft-limit" ] },
+              { "required": [ "hard-limit" ] }
+            ],
+            "properties": {
+              "period": {
+                "description": "Length of time to apply the quota over.",
+                "type": "string",
+                "enum": [ "MONTH" ]
+              },
+              "soft-limit": {
+                "description": "Advisory limit - access still works after hitting the soft limit.",
+                "type": "integer",
+                "minimum": 1
+              },
+              "hard-limit": {
+                "description": "Limit after which access to the API is removed until the period ends.",
+                "type": "integer",
+                "minimum": 1
+              }
+            }
+          },
+          "trial": {
+            "description": "Whether access is a limited trial (what this means is defined by the API backend) - default false.",
+            "type": "boolean",
+            "default": false
+          },
+          "optional-data": {
+            "description": "Array of API backend defined identifiers for data that can optionally be added to the responses.",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "statements": {
+            "description": "A set of statements describing access to an API. Where multiple statements refer to the same API, access is granted to the union of datasets described by each statement.",
+            "type": "array",
+            "items": {
+              "description": "A statement describing access to certain datasets within a single API.",
+              "type": "object",
+              "required": ["restrictions"],
+              "properties": {
+                "restrictions": {
+                  "description": "A set of restrictions keyed by field. The dataset returned should be limited to the intersection of datasets returned by each individual restriction.",
+                  "type": "object",
+                  "additionalProperties": {
+                    "description": "The included values for the restriction field - where multiple values are included results should be returned where the field matches any of the values.",
+                    "type": "array",
+                    "items": {
+                      "description": "Value for the field - can be any type (valid types depending on API in question)."
+                    }
+                  }
+                },
+                "validity": {
+                  "description": "When is the statement valid.",
+                  "required": [ "from" ],
+                  "properties": {
+                    "from": {
+                      "description": ""
+                    },
+                    "days-after-first-use": {
+                      "description": ""
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
