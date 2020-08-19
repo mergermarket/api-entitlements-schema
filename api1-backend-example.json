@@ -1,0 +1,17 @@
+{
+  "trial": true,
+  "statements": [
+    {
+      "restrictions": {
+        "field1": [ "foo", "bar" ],
+        "field2": [ "baz" ]
+      }
+    },
+    {
+      "restrictions": {
+        "field2": [ "baz" ],
+        "field3": [ "quux" ]
+      }   
+    }
+  ]
+}
