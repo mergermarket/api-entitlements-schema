@@ -2,7 +2,7 @@
 
 set -e
 
-id="api-entitlements-schema-validator-$RANDOM"
+id="api-entitlements-schema-validator"
 
 echo building docker image... >&2
 docker build -qt "$id" . >/dev/null
