@@ -8,7 +8,7 @@ echo building docker image... >&2
 docker build -qt "$id" . >/dev/null
 echo done. >&2
 
-function ajv() {
+function ajv {
     echo "> ajv $@" >&2
     docker run \
         -i --rm --name "$id" \
