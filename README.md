@@ -1,5 +1,7 @@
 # API Entitlements Schema
 
+![Unit tests](https://github.com/mergermarket/api-entitlements-schema/workflows/CI/badge.svg)
+
 This repo contains reference [JSON Schemas](https://json-schema.org/) for
 policies used to represent entitlements to Acuris APIs:
 
