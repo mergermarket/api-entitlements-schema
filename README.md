@@ -167,3 +167,5 @@ Statements can have a validity period to facilitate limited time access to a dat
 ```
 
 This should be interpreted as the client can access the API including the specified dataset from the `from` date. The first time the API is accessed after this date is recorded, and the statement is valid for 30 days from this date.
+
+<a href="https://github.com/mergermarket/api-entitlements-schema"><img loading="lazy" width="149" height="149" src="https://github.blog/wp-content/uploads/2008/12/forkme_right_white_ffffff.png?resize=149%2C149" class="attachment-full size-full" alt="Fork me on GitHub" data-recalc-dims="1"></a>
