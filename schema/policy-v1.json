@@ -23,7 +23,7 @@
             "description": "Limits for how many requests can be made to the API in a given period.",
             "type": "object",
             "required": [ "period" ],
-            "oneOf": [
+            "anyOf": [
               { "required": [ "soft-limit" ] },
               { "required": [ "hard-limit" ] }
             ],
@@ -50,8 +50,8 @@
             "type": "boolean",
             "default": false
           },
-          "optional-data": {
-            "description": "Array of API backend defined identifiers for data that can optionally be added to the responses.",
+          "response-exclude": {
+            "description": "Array of API backend defined identifiers for data that should be excluded from responses.",
             "type": "array",
             "items": {
               "type": "string"
@@ -81,10 +81,14 @@
                   "required": [ "from" ],
                   "properties": {
                     "from": {
-                      "description": ""
+                      "description": "Date that validity period starts in YYYY-MM-DD format - should be interpretted as midnight UTC on that date.",
+                      "type": "string",
+                      "format": "date"
                     },
                     "days-after-first-use": {
-                      "description": ""
+                      "description": "How long the statement is valid from after the first request since the from date.",
+                      "type": "integer",
+                      "minimum": 1
                     }
                   }
                 }

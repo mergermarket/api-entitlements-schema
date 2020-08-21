@@ -3,14 +3,16 @@
 This repo contains reference [JSON Schemas](https://json-schema.org/) for
 policies used to represent entitlements to Acuris APIs:
 
-* [API Entitlements Schema Version 1](v1.json) - this is the format used to represent API entitlements.
-* [API Entitlements Backend Schema Version 1](v1.json) - this is the format for a subset of the data sent to an API backend after authentication and initial authorisation.
+* [API Entitlements Schema Version 1](schema/policy-v1.json) - this is the format used to represent API entitlements.
+* [API Entitlements Backend Schema Version 1](schema/backend-v1.json) - this is the format for a subset of the data sent to an API backend after authentication and initial authorisation.
 
 ## Examples
 
-* [policy-example.json](policy-example.json) - this is an example policy that grants access to two APIs, demonstrating the main features of the format.
-* [api1-backend-example.json](api1-backend-example.json) - this is an example of the format sent with an API request to the api1 backend (from the above policy example) if all statements are currently valid.
-* [api2-backend-example.json](api1-backend-example.json) - this is an example of the format sent with an API request to the api2 backend (from the above policy example).
+To test the examples run `./test.sh` in the root of the project (requires docker).
+
+* [policy-example.json](examples/policy-example.json) - this is an example policy that grants access to two APIs, demonstrating the main features of the format.
+* [api1-backend-example.json](examples/api1-backend-example.json) - this is an example of the format sent with an API request to the api1 backend (from the above policy example) if all statements are currently valid.
+* [api2-backend-example.json](examples/api1-backend-example.json) - this is an example of the format sent with an API request to the api2 backend (from the above policy example).
 
 ## Description
 
@@ -29,13 +31,13 @@ This policy includes no APIs so grants access to nothing.
 
 ### `apis`
 
-Within the `apis` object keys repesent API identifiers and values represent access to that API
+Within the `apis` object keys repesent APIs identified by thier base URL (excluding the scheme/protocol) and values represent access to that API
 
 ```json
 {
   "version": 1,
   "apis": {
-    "myapi": {
+    "example.com/myapi": {
       "plan": "name-of-api-plan"
     }
   }
@@ -52,7 +54,7 @@ Each API may have a quota that specifies how many requests are allowed within a 
 {
   "version": 1,
   "apis": {
-    "myapi": {
+    "example.com/myapi": {
       "plan": "name-of-api-plan",
       "quota": {
         "soft-limit": 10000,
@@ -72,7 +74,7 @@ Access to an API can be marked as trial access (default `false`). What this mean
 {
   "version": 1,
   "apis": {
-    "myapi": {
+    "example.com/myapi": {
       "plan": "name-of-api-plan",
       "trial": true
     }
@@ -80,17 +82,17 @@ Access to an API can be marked as trial access (default `false`). What this mean
 }
 ```
 
-### Optional Data
+### Response Exclude
 
-An API may restrict access to certain data by default in responses - e.g. it may not include contact details.
+An API may allow certain data to be excluded from responses - for example it contact details.
 
 ```json
 {
   "version": 1,
   "apis": {
-    "myapi": {
+    "example.com/myapi": {
       "plan": "name-of-api-plan",
-      "optional-data": ["contact"]
+      "reponse-exclude": ["contact"]
     }
   }
 }
@@ -106,7 +108,7 @@ Statements define what datasets can be returned.
 {
   "version": 1,
   "apis": {
-    "myapi": {
+    "example.com/myapi": {
       "plan": "name-of-api-plan",
       "statements": [
         {
@@ -143,7 +145,7 @@ Statements can have a validity period to facilitate limited time access to a dat
 {
   "version": 1,
   "apis": {
-    "myapi": {
+    "example.com/myapi": {
       "plan": "name-of-api-plan",
       "statements": [
         {

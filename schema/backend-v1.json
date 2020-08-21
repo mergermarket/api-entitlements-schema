@@ -1,0 +1,46 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Backend policy",
+  "description": "What the backend sees of a policy after authentication.",
+  "type": "object",
+  "required": [ "version", "trial" ],
+  "properties": {
+    "version": {
+      "type": "integer",
+      "enum": [ 1 ]
+    },
+    "trial": {
+      "description": "Whether access is a limited trial (what this means is defined by the API backend) - default false.",
+      "type": "boolean"
+    },
+    "response-exclude": {
+      "description": "Array of API backend defined identifiers for data that should be excluded from responses.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "statements": {
+      "description": "A set of statements describing access to an API. Where multiple statements refer to the same API, access is granted to the union of datasets described by each statement.",
+      "type": "array",
+      "items": {
+        "description": "A statement describing access to certain datasets within a single API.",
+        "type": "object",
+        "required": ["restrictions"],
+        "properties": {
+          "restrictions": {
+            "description": "A set of restrictions keyed by field. The dataset returned should be limited to the intersection of datasets returned by each individual restriction.",
+            "type": "object",
+            "additionalProperties": {
+              "description": "The included values for the restriction field - where multiple values are included results should be returned where the field matches any of the values.",
+              "type": "array",
+              "items": {
+                "description": "Value for the field - can be any type (valid types depending on API in question)."
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

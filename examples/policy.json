@@ -1,6 +1,6 @@
 {
-  "apis": {
-    "api1": {
+  "example.com/api1": {
+    "transaction-clauses": {
       "quota": {
         "soft-limit": 10000,
         "hard-limit": 20000,
@@ -30,9 +30,9 @@
         }
       ]
     },
-    "api2": {
+    "example.com/api2": {
       "plan": "1000-requests-per-second-plan",
-      "optional-datasets": ["contact-details"]
+      "optional-datasets": [ "contact-details" ]
     }
   }
 }
