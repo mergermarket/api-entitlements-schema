@@ -12,9 +12,9 @@ policies used to represent entitlements to Acuris APIs:
 
 To test the examples run `./test.sh` in the root of the project (requires docker).
 
-* [policy-example.json](examples/policy-example.json) - this is an example policy that grants access to two APIs, demonstrating the main features of the format.
-* [api1-backend-example.json](examples/api1-backend-example.json) - this is an example of the format sent with an API request to the api1 backend (from the above policy example) if all statements are currently valid.
-* [api2-backend-example.json](examples/api1-backend-example.json) - this is an example of the format sent with an API request to the api2 backend (from the above policy example).
+* [examples/policy.json](examples/policy.json) - this is an example policy that grants access to two APIs, demonstrating the main features of the format.
+* [examples/api1-backend.json](examples/api1-backend.json) - this is an example of the format sent with an API request to the api1 backend (from the above policy example) if all statements are currently valid.
+* [examples/api2-backend.json](examples/api1-backend.json) - this is an example of the format sent with an API request to the api2 backend (from the above policy example).
 
 ## Description
 
