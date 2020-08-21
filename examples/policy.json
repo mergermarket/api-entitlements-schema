@@ -33,7 +33,12 @@
     },
     "example.com/api2": {
       "plan": "1000-requests-per-second-plan",
-      "response-exclude": [ "contact-details" ]
+      "response-exclude": [ "contact-details" ],
+      "statements": [
+        {
+          "restrictions": {}
+        }
+      ]
     }
   }
 }

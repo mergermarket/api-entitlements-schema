@@ -4,7 +4,7 @@
   "title": "Backend policy",
   "description": "What the backend sees of a policy after authentication.",
   "type": "object",
-  "required": [ "trial" ],
+  "required": [ "trial", "statements" ],
   "additionalProperties": false,
   "properties": {
     "$schema": {

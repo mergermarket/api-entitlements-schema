@@ -104,7 +104,7 @@ The identifiers are defined and interpreted by the APIs.
 
 ### Statements
 
-Statements define what datasets can be returned.
+Statements define what datasets can be returned. There must be at least one statement (otherwise no access would be allowed).
 
 ```json
 {
