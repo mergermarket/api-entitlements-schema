@@ -46,7 +46,7 @@ Within the `apis` object keys repesent APIs identified by thier base URL (exclud
 }
 ```
 
-The only required field is that name of a plan. These are predefined plans that restrict the rate that an API can be accessed (e.g. 10 requests per second).
+The required fields are `plan` and `statements`. Plans are predefined by the API that restrict the rate that an API can be accessed (e.g. 10 requests per second).
 
 ### Quota
 
@@ -104,7 +104,7 @@ The identifiers are defined and interpretted by the APIs.
 
 ### Statements
 
-Statements define what datasets can be returned.
+Statements define what datasets can be returned. There must be at least one statement (otherwise no access would be allowed).
 
 ```json
 {
