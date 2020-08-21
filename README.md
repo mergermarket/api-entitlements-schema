@@ -20,11 +20,11 @@ To test the examples run `./test.sh` in the root of the project (requires docker
 
 ### Top-level
 
-At the top level there are `version` and `apis` keys:
+At the top level there are `$schema` and `apis` keys:
 
 ```json
 {
-  "version": 1,
+  "$schema": "https://mergermarket.github.io/api-entitlements-schema/schema/policy-v1.json#",
   "apis": {}
 }
 ```
@@ -37,7 +37,7 @@ Within the `apis` object keys repesent APIs identified by thier base URL (exclud
 
 ```json
 {
-  "version": 1,
+  "$schema": "https://mergermarket.github.io/api-entitlements-schema/schema/policy-v1.json#",
   "apis": {
     "example.com/myapi": {
       "plan": "name-of-api-plan"
@@ -54,7 +54,7 @@ Each API may have a quota that specifies how many requests are allowed within a 
 
 ```json
 {
-  "version": 1,
+  "$schema": "https://mergermarket.github.io/api-entitlements-schema/schema/policy-v1.json#",
   "apis": {
     "example.com/myapi": {
       "plan": "name-of-api-plan",
@@ -74,7 +74,7 @@ Access to an API can be marked as trial access (default `false`). What this mean
 
 ```json
 {
-  "version": 1,
+  "$schema": "https://mergermarket.github.io/api-entitlements-schema/schema/policy-v1.json#",
   "apis": {
     "example.com/myapi": {
       "plan": "name-of-api-plan",
@@ -90,7 +90,7 @@ An API may allow certain data to be excluded from responses - for example it con
 
 ```json
 {
-  "version": 1,
+  "$schema": "https://mergermarket.github.io/api-entitlements-schema/schema/policy-v1.json#",
   "apis": {
     "example.com/myapi": {
       "plan": "name-of-api-plan",
@@ -108,7 +108,7 @@ Statements define what datasets can be returned.
 
 ```json
 {
-  "version": 1,
+  "$schema": "https://mergermarket.github.io/api-entitlements-schema/schema/policy-v1.json#",
   "apis": {
     "example.com/myapi": {
       "plan": "name-of-api-plan",
@@ -145,7 +145,7 @@ Statements can have a validity period to facilitate limited time access to a dat
 
 ```json
 {
-  "version": 1,
+  "$schema": "https://mergermarket.github.io/api-entitlements-schema/schema/policy-v1.json#",
   "apis": {
     "example.com/myapi": {
       "plan": "name-of-api-plan",

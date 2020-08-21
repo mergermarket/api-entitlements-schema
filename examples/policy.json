@@ -1,6 +1,7 @@
 {
-  "example.com/api1": {
-    "transaction-clauses": {
+  "$schema": "https://mergermarket.github.io/api-entitlements-schema/schema/policy-v1.json#",
+  "apis": {
+    "example.com/api1": {
       "quota": {
         "soft-limit": 10000,
         "hard-limit": 20000,
@@ -32,7 +33,7 @@
     },
     "example.com/api2": {
       "plan": "1000-requests-per-second-plan",
-      "optional-datasets": [ "contact-details" ]
+      "response-exclude": [ "contact-details" ]
     }
   }
 }

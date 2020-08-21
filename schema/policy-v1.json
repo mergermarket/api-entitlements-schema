@@ -1,12 +1,15 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://mergermarket.github.io/api-entitlements-schema/schema/policy-v1.json#",
   "title": "Policy",
   "description": "A policy describing access rights to datasets within one or more APIs.",
   "type": "object",
+  "required": [ "apis" ],
+  "additionalProperties": false,
   "properties": {
-    "version": {
-      "type": "integer",
-      "enum": [ 1 ]
+    "$schema": {
+      "type": "string",
+      "enum": [ "https://mergermarket.github.io/api-entitlements-schema/schema/policy-v1.json#" ]
     },
     "apis": {
       "type": "object",
@@ -14,6 +17,7 @@
       "additionalProperties": {
         "type": "object",
         "required": [ "plan" ],
+        "additionalProperties": false,
         "properties": {
           "plan": {
             "description": "The name of the usage plan applied when accessing the API.",
@@ -23,6 +27,7 @@
             "description": "Limits for how many requests can be made to the API in a given period.",
             "type": "object",
             "required": [ "period" ],
+            "additionalProperties": false,
             "anyOf": [
               { "required": [ "soft-limit" ] },
               { "required": [ "hard-limit" ] }
@@ -64,6 +69,7 @@
               "description": "A statement describing access to certain datasets within a single API.",
               "type": "object",
               "required": ["restrictions"],
+              "additionalProperties": false,
               "properties": {
                 "restrictions": {
                   "description": "A set of restrictions keyed by field. The dataset returned should be limited to the intersection of datasets returned by each individual restriction.",
