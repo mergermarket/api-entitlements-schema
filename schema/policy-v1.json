@@ -87,7 +87,7 @@
                   "required": [ "from" ],
                   "properties": {
                     "from": {
-                      "description": "Date that validity period starts in YYYY-MM-DD format - should be interpretted as midnight UTC on that date.",
+                      "description": "Date that validity period starts in YYYY-MM-DD format - should be interpreted as midnight UTC on that date.",
                       "type": "string",
                       "format": "date"
                     },
@@ -95,6 +95,9 @@
                       "description": "How long the statement is valid from after the first request since the from date.",
                       "type": "integer",
                       "minimum": 1
+                    },
+                    "to": {
+                      "description": "Date that validity period ends."
                     }
                   }
                 }
