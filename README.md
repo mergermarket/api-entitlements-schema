@@ -32,7 +32,7 @@ This policy includes no APIs so grants access to nothing.
 
 ### `apis`
 
-Within the `apis` object keys repesent APIs identified by thier base URL (excluding the scheme/protocol) and values represent access to that API
+Within the `apis` object keys represent APIs identified by their base URL (excluding the scheme/protocol) and values represent access to that API
 
 ```json
 {
@@ -69,7 +69,7 @@ Each API may have a quota that specifies how many requests are allowed within a 
 
 ### Trial Restrictions
 
-Access to an API can be marked as `applyTrialRestrictions` so that the data that's returned is limited during the trial (for exmaple). What this means will be defined and implemented by the API backend.
+Access to an API can be marked as `applyTrialRestrictions` so that the data that's returned is limited during the trial (for example). What this means will be defined and implemented by the API backend.
 
 ```json
 {
@@ -99,7 +99,7 @@ An API may allow certain data to be excluded from responses - for example it con
 }
 ```
 
-The identifiers are defined and interpretted by the APIs.
+The identifiers are defined and interpreted by the APIs.
 
 ### Statements
 
@@ -140,7 +140,7 @@ The field names and values are defined by and interpreted by the APIs. Note that
 
 ### Validity
 
-Statements can have a validity period to facilitate limited time access to a dataset (e.g. trialing access).
+Statements can have a validity period to facilitate limited time access to a dataset (e.g. trailing access).
 
 ```json
 {
