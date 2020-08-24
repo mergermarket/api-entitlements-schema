@@ -59,8 +59,8 @@ Each API may have a quota that specifies how many requests are allowed within a 
     "example.com/myapi": {
       "plan": "name-of-api-plan",
       "quota": {
-        "soft-limit": 10000,
-        "hard-limit": 20000,
+        "softLimit": 10000,
+        "hardLimit": 20000,
         "period": "MONTH"
       }
     }
@@ -94,7 +94,7 @@ An API may allow certain data to be excluded from responses - for example it con
   "apis": {
     "example.com/myapi": {
       "plan": "name-of-api-plan",
-      "reponse-exclude": ["contact"]
+      "responseExclude": ["contact"]
     }
   }
 }
