@@ -8,7 +8,7 @@
         "period": "MONTH"
       },
       "plan": "10-requests-per-second-plan",
-      "trial": true,
+      "applyTrialRestrictions": true,
       "statements": [
         {
           "restrictions": {

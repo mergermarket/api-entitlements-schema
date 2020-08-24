@@ -50,7 +50,7 @@
               }
             }
           },
-          "trial": {
+          "applyTrialRestrictions": {
             "description": "Whether access is a limited trial (what this means is defined by the API backend) - default false.",
             "type": "boolean",
             "default": false

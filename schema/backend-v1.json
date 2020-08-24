@@ -4,14 +4,14 @@
   "title": "Backend policy",
   "description": "What the backend sees of a policy after authentication.",
   "type": "object",
-  "required": [ "trial", "statements" ],
+  "required": [ "applyTrialRestrictions", "statements" ],
   "additionalProperties": false,
   "properties": {
     "$schema": {
       "type": "string",
       "enum": [ "https://mergermarket.github.io/api-entitlements-schema/schema/backend-v1.json#" ]
     },
-    "trial": {
+    "applyTrialRestrictions": {
       "description": "Whether access is a limited trial (what this means is defined by the API backend) - default false.",
       "type": "boolean"
     },

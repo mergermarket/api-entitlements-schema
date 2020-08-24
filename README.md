@@ -68,9 +68,9 @@ Each API may have a quota that specifies how many requests are allowed within a 
 }
 ```
 
-### Trial
+### Trial Restrictions
 
-Access to an API can be marked as trial access (default `false`). What this means in terms of access to data will be interpretted by the individual API.
+Access to an API can be marked as `applyTrialRestrictions` so that the data that's returned is limited during the trial (for exmaple). What this means will be defined and implemented by the API backend.
 
 ```json
 {
@@ -78,7 +78,7 @@ Access to an API can be marked as trial access (default `false`). What this mean
   "apis": {
     "example.com/myapi": {
       "plan": "name-of-api-plan",
-      "trial": true
+      "applyTrialRestrictions": true
     }
   }
 }
