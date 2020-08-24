@@ -15,7 +15,7 @@
       "description": "Whether access is a limited trial (what this means is defined by the API backend) - default false.",
       "type": "boolean"
     },
-    "response-exclude": {
+    "responseExclude": {
       "description": "Array of API backend defined identifiers for data that should be excluded from responses.",
       "type": "array",
       "items": {

@@ -157,7 +157,7 @@ Statements can have a validity period to facilitate limited time access to a dat
           },
           "validity": {
             "from": "2021-01-01",
-            "days-after-first-use": 30
+            "daysAfterFirstUse": 30
           }
         }
       ]

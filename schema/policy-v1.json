@@ -29,8 +29,8 @@
             "required": [ "period" ],
             "additionalProperties": false,
             "anyOf": [
-              { "required": [ "soft-limit" ] },
-              { "required": [ "hard-limit" ] }
+              { "required": [ "softLimit" ] },
+              { "required": [ "hardLimit" ] }
             ],
             "properties": {
               "period": {
@@ -38,12 +38,12 @@
                 "type": "string",
                 "enum": [ "MONTH" ]
               },
-              "soft-limit": {
+              "softLimit": {
                 "description": "Advisory limit - access still works after hitting the soft limit.",
                 "type": "integer",
                 "minimum": 1
               },
-              "hard-limit": {
+              "hardLimit": {
                 "description": "Limit after which access to the API is removed until the period ends.",
                 "type": "integer",
                 "minimum": 1
@@ -55,7 +55,7 @@
             "type": "boolean",
             "default": false
           },
-          "response-exclude": {
+          "responseExclude": {
             "description": "Array of API backend defined identifiers for data that should be excluded from responses.",
             "type": "array",
             "items": {
@@ -92,7 +92,7 @@
                       "type": "string",
                       "format": "date"
                     },
-                    "days-after-first-use": {
+                    "daysAfterFirstUse": {
                       "description": "How long the statement is valid from after the first request since the from date.",
                       "type": "integer",
                       "minimum": 1

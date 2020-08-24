@@ -3,8 +3,8 @@
   "apis": {
     "example.com/api1": {
       "quota": {
-        "soft-limit": 10000,
-        "hard-limit": 20000,
+        "softLimit": 10000,
+        "hardLimit": 20000,
         "period": "MONTH"
       },
       "plan": "10-requests-per-second-plan",
@@ -26,14 +26,14 @@
           },
           "validity": {
             "from": "2020-12-01",
-            "days-after-first-use": 30
+            "daysAfterFirstUse": 30
           }
         }
       ]
     },
     "example.com/api2": {
       "plan": "1000-requests-per-second-plan",
-      "response-exclude": [ "contact-details" ],
+      "responseExclude": [ "contactDetails" ],
       "statements": [
         {
           "restrictions": {}
