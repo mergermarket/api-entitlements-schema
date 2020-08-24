@@ -1,9 +1,9 @@
-# API Entitlements Schema
+This repo contains reference [JSON Schemas](https://json-schema.org/) for
+policies used to represent entitlements to Acuris APIs.
 
 ![Unit tests](https://github.com/mergermarket/api-entitlements-schema/workflows/CI/badge.svg)
 
-This repo contains reference [JSON Schemas](https://json-schema.org/) for
-policies used to represent entitlements to Acuris APIs:
+## Schemas
 
 * [API Entitlements Schema Version 1](schema/policy-v1.json) - this is the format used to represent API entitlements.
 * [API Entitlements Backend Schema Version 1](schema/backend-v1.json) - this is the format for a subset of the data sent to an API backend after authentication and initial authorisation.
