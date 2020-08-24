@@ -25,6 +25,7 @@
     "statements": {
       "description": "A set of statements describing access to an API. Where multiple statements refer to the same API, access is granted to the union of datasets described by each statement.",
       "type": "array",
+      "minItems": 1,
       "items": {
         "description": "A statement describing access to certain datasets within a single API.",
         "type": "object",
