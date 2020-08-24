@@ -1,6 +1,6 @@
 {
   "$schema": "https://mergermarket.github.io/api-entitlements-schema/schema/backend-v1.json#",
-  "trial": false,
+  "applyTrialRestrictions": false,
   "responseExclude": [ "contactDetails" ],
   "statements": [
     {
