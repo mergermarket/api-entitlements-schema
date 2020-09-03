@@ -47,26 +47,6 @@ Within the `apis` object keys represent APIs identified by their base URL (exclu
 
 The required fields are `plan` and `statements`. Plans are predefined by the API that restrict the rate that an API can be accessed (e.g. 10 requests per second).
 
-### Quota
-
-Each API may have a quota that specifies how many requests are allowed within a period. This can include a soft limit (e.g. where a client may be notified of going over the quota) and/or a hard limit where access to the API is withdrawn for the remainder of the period.
-
-```json
-{
-  "$schema": "https://mergermarket.github.io/api-entitlements-schema/schema/policy-v1.json#",
-  "apis": {
-    "example.com/myapi": {
-      "plan": "name-of-api-plan",
-      "quota": {
-        "softLimit": 10000,
-        "hardLimit": 20000,
-        "period": "MONTH"
-      }
-    }
-  }
-}
-```
-
 ### Trial Restrictions
 
 Access to an API can be marked as `applyTrialRestrictions` so that the data that's returned is limited during the trial (for example). What this means will be defined and implemented by the API backend.
