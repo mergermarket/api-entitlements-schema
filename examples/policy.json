@@ -2,11 +2,6 @@
   "$schema": "https://mergermarket.github.io/api-entitlements-schema/schema/policy-v1.json#",
   "apis": {
     "example.com/api1": {
-      "quota": {
-        "softLimit": 10000,
-        "hardLimit": 20000,
-        "period": "MONTH"
-      },
       "plan": "10-requests-per-second-plan",
       "applyTrialRestrictions": true,
       "statements": [

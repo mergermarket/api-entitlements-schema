@@ -23,33 +23,6 @@
             "description": "The name of the usage plan applied when accessing the API.",
             "type": "string"
           },
-          "quota": {
-            "description": "Limits for how many requests can be made to the API in a given period.",
-            "type": "object",
-            "required": [ "period" ],
-            "additionalProperties": false,
-            "anyOf": [
-              { "required": [ "softLimit" ] },
-              { "required": [ "hardLimit" ] }
-            ],
-            "properties": {
-              "period": {
-                "description": "Length of time to apply the quota over.",
-                "type": "string",
-                "enum": [ "MONTH" ]
-              },
-              "softLimit": {
-                "description": "Advisory limit - access still works after hitting the soft limit.",
-                "type": "integer",
-                "minimum": 1
-              },
-              "hardLimit": {
-                "description": "Limit after which access to the API is removed until the period ends.",
-                "type": "integer",
-                "minimum": 1
-              }
-            }
-          },
           "applyTrialRestrictions": {
             "description": "Whether access is a limited trial (what this means is defined by the API backend) - default false.",
             "type": "boolean",
