@@ -32,7 +32,7 @@ This policy includes no APIs so grants access to nothing.
 
 ### `apis`
 
-Within the `apis` object keys represent APIs identified by their base URL (excluding the scheme/protocol) and values represent access to that API
+Within `apis`, keys repesent APIs identified by their base URL (excluding the scheme/protocol) and values represent access to that API.
 
 ```json
 {
@@ -45,7 +45,7 @@ Within the `apis` object keys represent APIs identified by their base URL (exclu
 }
 ```
 
-The required fields are `plan` and `statements`. Plans are predefined by the API that restrict the rate that an API can be accessed (e.g. 10 requests per second).
+The only required field is the name of a plan. These are predefined plans that restrict the rate that an API can be accessed at (e.g. 10 requests per second).
 
 ### Trial Restrictions
 
@@ -65,7 +65,7 @@ Access to an API can be marked as `applyTrialRestrictions` so that the data that
 
 ### Response Exclude
 
-An API may allow certain data to be excluded from responses - for example it contact details.
+An API may allow certain data to be excluded from responses - for example, contact details.
 
 ```json
 {
@@ -112,9 +112,9 @@ Statements define what datasets can be returned. There must be at least one stat
 
 Where a restriction includes multiple values for the same field, this means that you will be returned data where the field matches either of these values (i.e. is the union of the datasets - an OR is applied).
 
-Where a restriction includes multiple fields, this means that data will be returned where all of the field values match (i.e. is the intersection fo the datasets - an AND is applied).
+Where a restriction includes multiple fields, this means that data will be returned where all of the field values match (i.e. is the intersection of the datasets - an AND is applied).
 
-Where there are multiple statements the union of the datasets for each statement is returned (i.e. and OR is applied).
+Where there are multiple statements, the union of the datasets for each statement is returned (i.e. an OR is applied).
 
 The field names and values are defined by and interpreted by the APIs. Note that specific APIs may not support multiple statements.
 
