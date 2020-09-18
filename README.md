@@ -1,9 +1,8 @@
-# API Entitlements Schema
+Reference [JSON Schemas](https://json-schema.org/) for policies used to represent entitlements to Acuris APIs.
 
 ![Unit tests](https://github.com/mergermarket/api-entitlements-schema/workflows/CI/badge.svg)
 
-This repo contains reference [JSON Schemas](https://json-schema.org/) for
-policies used to represent entitlements to Acuris APIs:
+## Schemas
 
 * [API Entitlements Schema Version 1](schema/policy-v1.json) - this is the format used to represent API entitlements.
 * [API Entitlements Backend Schema Version 1](schema/backend-v1.json) - this is the format for a subset of the data sent to an API backend after authentication and initial authorisation.
@@ -33,7 +32,7 @@ This policy includes no APIs so grants access to nothing.
 
 ### `apis`
 
-Within the `apis`, object keys repesent APIs identified by their base URL (excluding the scheme/protocol) and values represent access to that API
+Within `apis`, keys repesent APIs identified by their base URL (excluding the scheme/protocol) and values represent access to that API.
 
 ```json
 {
@@ -48,29 +47,9 @@ Within the `apis`, object keys repesent APIs identified by their base URL (exclu
 
 The only required field is the name of a plan. These are predefined plans that restrict the rate that an API can be accessed at (e.g. 10 requests per second).
 
-### Quota
+### Trial Restrictions
 
-Each API may have a quota that specifies how many requests are allowed within a period. This can include a soft limit (e.g. where a client may be notified of going over the quota) and/or a hard limit where access to the API is withdrawn for the remainder of the period.
-
-```json
-{
-  "$schema": "https://mergermarket.github.io/api-entitlements-schema/schema/policy-v1.json#",
-  "apis": {
-    "example.com/myapi": {
-      "plan": "name-of-api-plan",
-      "quota": {
-        "soft-limit": 10000,
-        "hard-limit": 20000,
-        "period": "MONTH"
-      }
-    }
-  }
-}
-```
-
-### Trial
-
-Access to an API can be marked as trial access (default `false`). What this means in terms of access to data will be interpretted by the individual API.
+Access to an API can be marked as `applyTrialRestrictions` so that the data that's returned is limited during the trial (for example). What this means will be defined and implemented by the API backend.
 
 ```json
 {
@@ -78,7 +57,7 @@ Access to an API can be marked as trial access (default `false`). What this mean
   "apis": {
     "example.com/myapi": {
       "plan": "name-of-api-plan",
-      "trial": true
+      "applyTrialRestrictions": true
     }
   }
 }
@@ -94,7 +73,7 @@ An API may allow certain data to be excluded from responses - for example, conta
   "apis": {
     "example.com/myapi": {
       "plan": "name-of-api-plan",
-      "response-exclude": ["contact"]
+      "responseExclude": ["contact"]
     }
   }
 }
@@ -141,7 +120,7 @@ The field names and values are defined by and interpreted by the APIs. Note that
 
 ### Validity
 
-Statements can have a validity period to facilitate limited time access to a dataset (e.g. trialing access).
+Statements can have a validity period to facilitate limited time access to a dataset (e.g. trailing access).
 
 ```json
 {
@@ -157,7 +136,7 @@ Statements can have a validity period to facilitate limited time access to a dat
           },
           "validity": {
             "from": "2021-01-01",
-            "days-after-first-use": 30
+            "daysAfterFirstUse": 30
           }
         }
       ]

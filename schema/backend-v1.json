@@ -4,18 +4,18 @@
   "title": "Backend policy",
   "description": "What the backend sees of a policy after authentication.",
   "type": "object",
-  "required": [ "trial", "statements" ],
+  "required": [ "applyTrialRestrictions", "statements" ],
   "additionalProperties": false,
   "properties": {
     "$schema": {
       "type": "string",
       "enum": [ "https://mergermarket.github.io/api-entitlements-schema/schema/backend-v1.json#" ]
     },
-    "trial": {
+    "applyTrialRestrictions": {
       "description": "Whether access is a limited trial (what this means is defined by the API backend) - default false.",
       "type": "boolean"
     },
-    "response-exclude": {
+    "responseExclude": {
       "description": "Array of API backend defined identifiers for data that should be excluded from responses.",
       "type": "array",
       "items": {
@@ -25,6 +25,7 @@
     "statements": {
       "description": "A set of statements describing access to an API. Where multiple statements refer to the same API, access is granted to the union of datasets described by each statement.",
       "type": "array",
+      "minItems": 1,
       "items": {
         "description": "A statement describing access to certain datasets within a single API.",
         "type": "object",
