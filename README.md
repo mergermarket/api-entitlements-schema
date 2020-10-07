@@ -79,6 +79,22 @@ An API may allow certain data to be excluded from responses - for example, conta
 }
 ```
 
+### Filter Exclude
+
+An API may allow certain filters to be blocked coming from request query parameters - for example, instrumentIsin filter.
+
+```json
+{
+  "$schema": "https://mergermarket.github.io/api-entitlements-schema/schema/policy-v1.json#",
+  "apis": {
+    "example.com/myapi": {
+      "plan": "name-of-api-plan",
+      "filterExclude": ["instrumentIsin"]
+    }
+  }
+}
+```
+
 The identifiers are defined and interpreted by the APIs.
 
 ### Statements
