@@ -35,6 +35,13 @@
               "type": "string"
             }
           },
+          "filterExclude": {
+            "description": "Array of API backend defined identifiers for filters that are not allowed to use in request query parameters (attributes out of the user licence).",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
           "statements": {
             "description": "A set of statements describing access to an API. Where multiple statements refer to the same API, access is granted to the union of datasets described by each statement.",
             "type": "array",
