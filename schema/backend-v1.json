@@ -43,11 +43,35 @@
             "description": "A set of restrictions keyed by field. The dataset returned should be limited to the intersection of datasets returned by each individual restriction.",
             "type": "object",
             "additionalProperties": {
-              "description": "The included values for the restriction field - where multiple values are included results should be returned where the field matches any of the values.",
-              "type": "array",
-              "items": {
-                "description": "Value for the field - can be any type (valid types depending on API in question)."
-              }
+              "anyOf": [
+                {
+                  "description": "The included values for the restriction field - where multiple values are included results should be returned where the field matches any of the values.",
+                  "type": "array",
+                  "items": {
+                    "description": "Value for the field - can be any type (valid types depending on API in question)."
+                  }
+                },
+                {
+                  "description": "Range",
+                  "type": "object",
+                  "required": [
+                    "from"
+                  ],
+                  "additionalProperties": false,
+                  "properties": {
+                    "from": {
+                      "description": "Date from when you are allowed data",
+                      "type": "string",
+                      "format": "date-time"
+                    },
+                    "to": {
+                      "description": "Date to when you are allowed data",
+                      "type": "string",
+                      "format": "date-time"
+                    }
+                  }
+                }
+              ]
             }
           }
         }
