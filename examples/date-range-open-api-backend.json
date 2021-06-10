@@ -1,0 +1,14 @@
+{
+  "$schema": "https://mergermarket.github.io/api-entitlements-schema/schema/backend-v1.json#",
+  "applyTrialRestrictions": false,
+  "responseExclude": [ "contactDetails" ],
+  "statements": [
+    {
+      "restrictions": {
+        "publishDate": {
+          "from": "2020-11-31T23:59:00.000Z"
+        }
+      }
+    }
+  ]
+}
