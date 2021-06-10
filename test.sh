@@ -22,3 +22,5 @@ ajv -c ajv-formats -s schema/backend-v1.json -d examples/api1-backend.json
 ajv -c ajv-formats -s schema/backend-v1.json -d examples/api2-backend.json
 ajv -c ajv-formats -s schema/backend-v1.json -d examples/date-range-open-api-backend.json
 ajv -c ajv-formats -s schema/backend-v1.json -d examples/date-range-fixed-api-backend.json
+ajv -c ajv-formats -s schema/policy-v1.json -d examples/date-range-open-policy.json
+ajv -c ajv-formats -s schema/policy-v1.json -d examples/date-range-fixed-policy.json
