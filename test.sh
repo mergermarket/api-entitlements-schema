@@ -16,7 +16,7 @@ ajv() {
         "$id" "$@"
 }
 
-ajv compile -s "schema/*"
-ajv -s schema/policy-v1.json -d examples/policy.json 
-ajv -s schema/backend-v1.json -d examples/api1-backend.json 
-ajv -s schema/backend-v1.json -d examples/api2-backend.json 
+ajv compile -c ajv-formats -s "schema/*"
+ajv -c ajv-formats -s schema/policy-v1.json -d examples/policy.json
+ajv -c ajv-formats -s schema/backend-v1.json -d examples/api1-backend.json
+ajv -c ajv-formats -s schema/backend-v1.json -d examples/api2-backend.json
