@@ -18,7 +18,8 @@
         {
           "restrictions": {
             "field2": [ "baz" ],
-            "field3": [ "quux" ]
+            "field3": [ "quux" ],
+            "field4": {}
           },
           "validity": {
             "from": "2020-12-01",

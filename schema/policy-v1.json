@@ -64,20 +64,17 @@
                         }
                       },
                       {
-                        "description": "Range",
+                        "description": "Date range",
                         "type": "object",
-                        "required": [
-                          "from"
-                        ],
                         "additionalProperties": false,
                         "properties": {
                           "from": {
-                            "description": "Date from when you are allowed data",
+                            "description": "Date from when you are allowed data. E.G 0000-00-00T00:00:00.000Z",
                             "type": "string",
                             "format": "date-time"
                           },
                           "to": {
-                            "description": "Date to when you are allowed data",
+                            "description": "Date to when you are allowed data. E.G 0000-00-00T00:00:00.000Z",
                             "type": "string",
                             "format": "date-time"
                           }
