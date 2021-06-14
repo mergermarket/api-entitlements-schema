@@ -1,0 +1,41 @@
+{
+  "$schema": "https://mergermarket.github.io/api-entitlements-schema/schema/policy-v1.json#",
+  "apis": {
+    "example.com/api1": {
+      "plan": "10-requests-per-second-plan",
+      "applyTrialRestrictions": true,
+      "statements": [
+        {
+          "restrictions": {
+            "field1": {
+              "from": "2020-11-30T23:59:00.000Z"
+            }
+          },
+          "validity": {
+            "from": "2021-01-01"
+          }
+        },
+        {
+          "restrictions": {
+            "field2": [ "baz" ],
+            "field3": [ "quux" ],
+            "field4": {}
+          },
+          "validity": {
+            "from": "2020-12-01",
+            "daysAfterFirstUse": 30
+          }
+        }
+      ]
+    },
+    "example.com/api2": {
+      "plan": "1000-requests-per-second-plan",
+      "responseExclude": [ "contactDetails" ],
+      "statements": [
+        {
+          "restrictions": {}
+        }
+      ]
+    }
+  }
+}

@@ -117,7 +117,10 @@ Statements define what datasets can be returned. There must be at least one stat
         {
           "restrictions": {
             "field2": [ "baz" ],
-            "field3": [ "quux" ]
+            "field3": [ "quux" ],
+            "field4": {
+              "from": "2020-11-30T23:59:00.000Z"
+            }
           }
         }
       ]
@@ -133,6 +136,8 @@ Where a restriction includes multiple fields, this means that data will be retur
 Where there are multiple statements, the union of the datasets for each statement is returned (i.e. an OR is applied).
 
 The field names and values are defined by and interpreted by the APIs. Note that specific APIs may not support multiple statements.
+
+Restrictions can be 1 of 2 types either a `string[]` or a range `{ from: string, to:string }`.
 
 ### Validity
 
