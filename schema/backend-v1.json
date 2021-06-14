@@ -54,9 +54,6 @@
                 {
                   "description": "Range",
                   "type": "object",
-                  "required": [
-                    "from"
-                  ],
                   "additionalProperties": false,
                   "properties": {
                     "from": {
